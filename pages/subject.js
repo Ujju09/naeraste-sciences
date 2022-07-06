@@ -96,9 +96,3 @@ export async function getServerSideProps(context) {
     props: { records: records }, // will be passed to the page component as props
   };
 }
-
-// {records.fields["Question (from Notes)"].map((record, index) => (
-//   <div key={index}>
-//     <orbit-prompt question={record} answer="Answer"></orbit-prompt>
-//   </div>
-// ))}
