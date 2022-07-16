@@ -50,7 +50,7 @@
   font-size: 2rem;
 
   width: 100vw;
-  background-color: #1B3EA8;
+  background-color: #F22D5D;
   color: white;
   font-weight: 300;
 }
@@ -88,14 +88,29 @@
 .card {
   margin: 1rem;
   padding: 1.5rem;
+  display: flex;
   text-align: left;
   color: inherit;
   background-color: aliceblue;
   text-decoration: none;
   border: 1px solid #eaeaea;
-  border-radius: 10px;
+  border-radius: 40px;
   transition: color 0.15s ease, border-color 0.15s ease;
   max-width: 300px;
+}
+.practiceCard{
+  display: flex;
+  border: 1px solid #30aa96;
+  border-radius: 40px;
+  padding: 0.35rem;
+  margin-bottom: 1rem;
+}
+.practiceCard:hover,
+.practiceCard:focus,
+.practiceCard:active {
+  color: #30aa96;
+  border-color: #30aa96;
+  cursor: pointer;
 }
 
 .iframe{
@@ -112,8 +127,9 @@
 .card:hover,
 .card:focus,
 .card:active {
-  color: #0070f3;
-  border-color: #0070f3;
+  color: #F22D5D;
+  border-color: #F22D5D;
+  cursor: pointer;
 }
 
 .card h2 {
@@ -147,16 +163,8 @@
     grid-template-columns: repeat(3, 1fr);
   }
   .card {
-    margin: 1rem;
-    padding: 1.5rem;
-    text-align: left;
-    color: inherit;
-    background-color: aliceblue;
-    text-decoration: none;
-    border: 1px solid #eaeaea;
-    border-radius: 10px;
-    transition: color 0.15s ease, border-color 0.15s ease;
-    width: 200px;
+    
+    width: 100%;
   }
 }
 

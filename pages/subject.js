@@ -36,9 +36,25 @@ export default function Resource({ records }) {
           {records.fields["Chapter Name"]}
         </p>
 
+        {records.fields.hasOwnProperty("practiceOnKhanAcademy") === true ? (
+          <Link href={records.fields["practiceOnKhanAcademy"]}>
+            <div className={styles.practiceCard}>
+              <Image
+                src="/KhanSVG.svg"
+                width={50}
+                height={50}
+                alt="Khan Academy Logo"
+              />
+              <p> Practice on Khan Academy</p>
+            </div>
+          </Link>
+        ) : (
+          <></>
+        )}
+
         {records.fields.hasOwnProperty("Question (from Notes)") === false ? (
           <>
-            Nothing here yet!
+            No questions are available for Orbit!
             <Image src="/silence.png" alt="No image" width={200} height={200} />
             <h2>Want to contribute?</h2>
             <p>
@@ -59,20 +75,38 @@ export default function Resource({ records }) {
             </p>
           </>
         ) : (
-          <orbit-reviewarea
-            color="orange"
-            style={{
-              width: "100%",
-            }}
-          >
-            {records.fields["Question (from Notes)"].map((question, index) => (
-              <orbit-prompt
-                question={question}
-                answer={records.fields["Answer (from Notes)"][index]}
-                key={index}
-              ></orbit-prompt>
-            ))}
-          </orbit-reviewarea>
+          <>
+            <div
+              style={{
+                display: "flex",
+                marginBottom: "1rem",
+              }}
+            >
+              <Image
+                src="/orbit.svg"
+                alt="Orbit image"
+                width={100}
+                height={100}
+              />
+              <p>Deeply internalize ideas and facts through periodic review.</p>
+            </div>
+            <orbit-reviewarea
+              color="orange"
+              style={{
+                width: "100%",
+              }}
+            >
+              {records.fields["Question (from Notes)"].map(
+                (question, index) => (
+                  <orbit-prompt
+                    question={question}
+                    answer={records.fields["Answer (from Notes)"][index]}
+                    key={index}
+                  ></orbit-prompt>
+                )
+              )}
+            </orbit-reviewarea>
+          </>
         )}
       </main>
     </div>
