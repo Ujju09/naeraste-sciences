@@ -19,13 +19,29 @@ export default function MCQ(props) {
     setIsSelected(true);
   };
 
-  const allowedTags = new Set(["&amp;", "&lt;", "&nbsp;"]);
+  var replaceHtmlEntites = (function () {
+    var translate_re = /&(nbsp|amp|quot|lt|gt);/g;
+    var translate = {
+      nbsp: " ",
+      amp: "&",
+      quot: '"',
+      lt: "<",
+      gt: ">",
+    };
+    return function (s) {
+      return s.replace(translate_re, function (match, entity) {
+        return translate[entity];
+      });
+    };
+  })();
+
+  const allowedTags = new Set(["sup", "sub"]);
 
   const alphabet = ["A", "B", "C", "D"];
 
   return (
     <div className={styles.question}>
-      <p>{striptags(props.question)}</p>
+      <p>{striptags(replaceHtmlEntites(props.question), allowedTags)}</p>
 
       {props.imageURL === "" ? null : (
         <Image
@@ -46,11 +62,17 @@ export default function MCQ(props) {
             >
               {selectedIndex === index ? (
                 <div className={styles.answerChosen}>
-                  {alphabet[index] + ". " + striptags(answer["text"])}
+                  {alphabet[index] +
+                    ". " +
+                    striptags(replaceHtmlEntites(answer["text"]), allowedTags)}
                   {answer["correct"]}
                 </div>
               ) : (
-                <>{alphabet[index] + ". " + striptags(answer["text"])}</>
+                <>
+                  {alphabet[index] +
+                    ". " +
+                    striptags(replaceHtmlEntites(answer["text"]), allowedTags)}
+                </>
               )}
             </div>
           );
