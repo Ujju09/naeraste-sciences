@@ -8,7 +8,7 @@ import Link from "next/link";
 export default function Diksha() {
   const router = useRouter();
   const { content } = router.query;
-  const contentArray = content.toString().split(";");
+  const contentArray = content.split(";");
 
   return (
     <div className={styles.container}>
