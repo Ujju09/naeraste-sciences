@@ -2,12 +2,9 @@
 
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
-import { useRouter } from "next/router";
 import Link from "next/link";
 
-export default function Diksha() {
-  const router = useRouter();
-  const { content } = router.query;
+export default function Diksha({ content }) {
   const contentArray = content.split(";");
 
   return (
@@ -40,4 +37,11 @@ export default function Diksha() {
       </main>
     </div>
   );
+}
+
+export async function getServerSideProps(context) {
+  const content = context.query.content;
+  return {
+    props: { content: content },
+  };
 }

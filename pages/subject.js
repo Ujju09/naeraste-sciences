@@ -9,7 +9,7 @@ import Link from "next/link";
 export default function Resource({ records }) {
   const helpText = `I want to share ${records.fields["Chapter Name"]} questions with you.`;
   const encoded = encodeURI(helpText);
-
+  
   return (
     <div className={styles.container}>
       <Script
