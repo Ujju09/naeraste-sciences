@@ -9,6 +9,7 @@ import Link from "next/link";
 export default function Resource({ records }) {
   const helpText = `I want to share ${records.fields["Chapter Name"]} questions with you.`;
   const encoded = encodeURI(helpText);
+
   return (
     <div className={styles.container}>
       <Script
@@ -46,6 +47,29 @@ export default function Resource({ records }) {
                 alt="Khan Academy Logo"
               />
               <p> Practice on Khan Academy</p>
+            </div>
+          </Link>
+        ) : (
+          <></>
+        )}
+
+        {records.fields.hasOwnProperty("prepareOnDiksha") === true ? (
+          <Link
+            href={{
+              pathname: "/diksha",
+              query: {
+                content: records.fields["prepareOnDiksha"],
+              },
+            }}
+          >
+            <div className={styles.practiceCard}>
+              <Image
+                src="/diksha.svg"
+                width={50}
+                height={50}
+                alt="Diksha Logo"
+              />
+              <p> Practice from Diksha</p>
             </div>
           </Link>
         ) : (
