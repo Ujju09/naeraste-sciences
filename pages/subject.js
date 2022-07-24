@@ -9,6 +9,7 @@ import Link from "next/link";
 export default function Resource({ records }) {
   const helpText = `I want to share ${records.fields["Chapter Name"]} questions with you.`;
   const encoded = encodeURI(helpText);
+
   return (
     <div className={styles.container}>
       <Script
@@ -52,11 +53,49 @@ export default function Resource({ records }) {
           <></>
         )}
 
+        {records.fields.hasOwnProperty("prepareOnDiksha") === true ? (
+          <Link
+            href={{
+              pathname: "/diksha",
+              query: {
+                content: records.fields["prepareOnDiksha"],
+              },
+            }}
+          >
+            <div className={styles.practiceCard}>
+              <Image
+                src="/diksha.svg"
+                width={50}
+                height={50}
+                alt="Diksha Logo"
+              />
+              <p> Practice from Diksha</p>
+            </div>
+          </Link>
+        ) : (
+          <></>
+        )}
+        {
+          <div className={styles.practiceCard}>
+            <a
+              href={records.fields["ncertExemplar"]}
+              style={{
+                textDecoration: "none",
+                color: "green",
+                cursor: "pointer",
+                padding: "0.5rem",
+              }}
+            >
+              DOWNLOAD NCERT Exemplar PDF {""}
+            </a>
+          </div>
+        }
+
         {records.fields.hasOwnProperty("Question (from Notes)") === false ? (
           <>
             No questions are available for Orbit!
-            <Image src="/silence.png" alt="No image" width={200} height={200} />
-            <h2>Want to contribute?</h2>
+            <Image src="/silence.png" alt="No image" width={50} height={50} />
+            <h3>Want to contribute?</h3>
             <p>
               Send your questions to{" "}
               <span>

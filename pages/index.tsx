@@ -17,7 +17,7 @@ const Home: NextPage = () => {
 
       <main className={styles.main}>
         <h1 className={styles.title}>
-         naeRaste │
+         nae raste │
          नए रास्ते
         
         </h1>
@@ -27,7 +27,7 @@ const Home: NextPage = () => {
         <div className={styles.grid}>
           <Link href= "/resources" >
             <a className={styles.card}>
-            <Image src="/learn.svg" alt="LEarning resources" width={100} height={100}  priority/>
+            <Image src="/learn.svg" alt="Learning resources" width={100} height={100}  priority/>
 
             <h3 >Learning resources</h3>
             </a>

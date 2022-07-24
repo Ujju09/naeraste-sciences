@@ -12,6 +12,83 @@
   align-items: center;
   font-family: 'Lexend', monospace;
 }
+.mainDiksha {
+  height: 100%;
+  padding: 0rem 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  font-family: 'Lexend', monospace;
+  background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+}
+
+.container{
+  margin:0;
+  padding:0;
+}
+
+
+
+
+.question{
+  font-size: 1.2rem;
+  font-weight: medium;
+  color: rgb(78, 75, 75);
+  text-align: start;
+  margin-bottom: 1rem;
+  border-radius: 10px;
+  padding: 1rem;
+  border: #B8BCC1 solid 1px;
+}
+
+.answer{
+  font-size: 1.2rem;
+  font-weight: 300;
+  color: black;
+  text-align: start;
+  margin: 1rem;
+  border-radius: 10px;
+  padding: 1rem;
+  border: #B8BCC1 solid 1px;
+  font-family: 'Lexend', monospace;
+}
+
+.answerChosen{
+  font-size: 1.2rem;
+  font-weight: 300;
+  text-align: start;
+font-weight: 400;
+  border-radius: 10px;
+  color: #0070f3;
+  border-color: #0070f3;
+  font-family: 'Lexend', monospace;
+}
+
+
+
+.questionCard{
+  width: 65%;
+  height: 100%;
+
+
+  align-items: left;
+  background-color: white;
+  border-radius: 10px;
+  padding: 1rem;
+  border: #B8BCC1 solid 1px;
+  margin-bottom: 1rem;
+}
+
+
+.answer:hover,
+.answer:focus,
+.answer:active {
+  color: #0070f3;
+  border-color: #0070f3;
+  cursor: pointer;
+}
 
 .footer {
   display: flex;
@@ -100,10 +177,12 @@
 }
 .practiceCard{
   display: flex;
+  justify-content: space-around;
   border: 1px solid #30aa96;
   border-radius: 40px;
   padding: 0.35rem;
   margin-bottom: 1rem;
+  transition: color 0.15s ease, border-color 0.15s ease;
 }
 .practiceCard:hover,
 .practiceCard:focus,
@@ -166,7 +245,83 @@
     
     width: 100%;
   }
+  .questionCard{
+    width: 85%;
+    height: 100%;
+  }
+  .question{
+    font-size: 1rem;
+    font-weight: medium;
+    color: rgb(78, 75, 75);
+    text-align: start;
+    margin-bottom: 0.5rem;
+    border-radius: 10px;
+    padding: 0.5em;
+    border: #B8BCC1 solid 1px;
+    font-family: 'Lexend', monospace;
+  }
+  .answer{
+    font-size: 0.9rem;
+    font-weight: 300;
+    color: black;
+    text-align: start;
+    margin: 0.5rem;
+    border-radius: 10px;
+    padding: 0.5rem;
+    border: #B8BCC1 solid 1px;
+    font-family: 'Lexend', monospace;
+  }
+  .practiceCard{
+    width: 90%;
+    justify-content: space-around;
+  }
 }
+
+.submitButton{
+  background-color: #0070f3;
+  border: none;
+  color: white;
+  padding: 10px 16px;
+  text-align: center;
+  justify-content: end;
+  text-decoration: none;
+  /* display: inline-block; */
+  font-size: 13px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 4px;
+  font-family: 'Lexend', monospace;
+}
+
+.submitButtonDisabled{
+  background-color: #B8BCC1;
+  border: none;
+  color: white;
+  padding: 10px 16px;
+  cursor: none;
+  justify-content: end;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 13px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 4px;
+  font-family: 'Lexend', monospace;
+}
+
+.correctAnswer{
+ 
+  border: none;
+  color: rgb(57, 191, 97);
+  padding: 10px 16px;
+
+  text-decoration: none;
+  display: inline-block;
+  
+  font-family:  monospace;
+}
+
 
 .button{
   background-color:#D05E70;
