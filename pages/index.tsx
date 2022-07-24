@@ -17,7 +17,7 @@ const Home: NextPage = () => {
 
       <main className={styles.main}>
         <h1 className={styles.title}>
-         naeRaste │
+         nae raste │
          नए रास्ते
         
         </h1>

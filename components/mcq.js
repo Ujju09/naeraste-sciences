@@ -28,6 +28,20 @@ export default function MCQ(props) {
   return (
     <div className={styles.question}>
       <p>{HtmlToReactParser.parse(striptags(props.question, allowedTags))}</p>
+      <p
+        style={{
+          fontWeight: "light",
+          color: "grey",
+          cursor: "pointer",
+        }}
+        onClick={() =>
+          alert(
+            "Always draw figures when you are solving a numerical problem 🤞🏻\n "
+          )
+        }
+      >
+        ⓘ{" "}
+      </p>
 
       {props.imageURL === "" ? null : (
         <Image
