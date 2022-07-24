@@ -21,33 +21,13 @@ export default function MCQ(props) {
   };
   const HtmlToReactParser = new Parser();
 
-  var replaceHtmlEntites = (function () {
-    var translate_re = /&(nbsp|amp|quot|lt|gt);/g;
-    var translate = {
-      nbsp: " ",
-      amp: "&",
-      quot: '"',
-      lt: "<",
-      gt: ">",
-    };
-    return function (s) {
-      return s.replace(translate_re, function (match, entity) {
-        return translate[entity];
-      });
-    };
-  })();
-
   const allowedTags = new Set(["sup", "sub"]);
 
   const alphabet = ["A", "B", "C", "D"];
 
   return (
     <div className={styles.question}>
-      <p>
-        {HtmlToReactParser.parse(
-          striptags(replaceHtmlEntites(props.question), allowedTags)
-        )}
-      </p>
+      <p>{HtmlToReactParser.parse(striptags(props.question, allowedTags))}</p>
 
       {props.imageURL === "" ? null : (
         <Image
@@ -70,14 +50,17 @@ export default function MCQ(props) {
                 <div className={styles.answerChosen}>
                   {alphabet[index] +
                     ". " +
-                    striptags(replaceHtmlEntites(answer["text"]), allowedTags)}
-                  {answer["correct"]}
+                    HtmlToReactParser.parse(
+                      striptags(answer["text"], allowedTags)
+                    )}
                 </div>
               ) : (
                 <>
                   {alphabet[index] +
                     ". " +
-                    striptags(replaceHtmlEntites(answer["text"]), allowedTags)}
+                    HtmlToReactParser.parse(
+                      striptags(answer["text"], allowedTags)
+                    )}
                 </>
               )}
             </div>
@@ -95,7 +78,7 @@ export default function MCQ(props) {
         {}
         {isSubmitted === true ? (
           <div className={styles.correctAnswer}>
-            Answer: {striptags(props.correctAnswer)}
+            Answer: {HtmlToReactParser.parse(striptags(props.correctAnswer))}
           </div>
         ) : (
           <button
