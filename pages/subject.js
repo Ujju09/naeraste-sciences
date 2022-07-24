@@ -75,12 +75,27 @@ export default function Resource({ records }) {
         ) : (
           <></>
         )}
+        {
+          <div className={styles.practiceCard}>
+            <a
+              href={records.fields["ncertExemplar"]}
+              style={{
+                textDecoration: "none",
+                color: "green",
+                cursor: "pointer",
+                padding: "0.5rem",
+              }}
+            >
+              DOWNLOAD NCERT Exemplar PDF {""}
+            </a>
+          </div>
+        }
 
         {records.fields.hasOwnProperty("Question (from Notes)") === false ? (
           <>
             No questions are available for Orbit!
             <Image src="/silence.png" alt="No image" width={50} height={50} />
-            <h2>Want to contribute?</h2>
+            <h3>Want to contribute?</h3>
             <p>
               Send your questions to{" "}
               <span>
