@@ -4,6 +4,7 @@ import styles from "../styles/Home.module.css";
 import { useState } from "react";
 import striptags from "striptags";
 import Image from "next/image";
+import { Parser } from "html-to-react";
 
 export default function MCQ(props) {
   const [isSelected, setIsSelected] = useState(false);
@@ -18,6 +19,7 @@ export default function MCQ(props) {
     setSelectedIndex(index);
     setIsSelected(true);
   };
+  const HtmlToReactParser = new Parser();
 
   var replaceHtmlEntites = (function () {
     var translate_re = /&(nbsp|amp|quot|lt|gt);/g;
@@ -41,7 +43,11 @@ export default function MCQ(props) {
 
   return (
     <div className={styles.question}>
-      <p>{striptags(replaceHtmlEntites(props.question), allowedTags)}</p>
+      <p>
+        {HtmlToReactParser.parse(
+          striptags(replaceHtmlEntites(props.question), allowedTags)
+        )}
+      </p>
 
       {props.imageURL === "" ? null : (
         <Image
