@@ -27,7 +27,7 @@ const Home: NextPage = () => {
         <div className={styles.grid}>
           <Link href= "/resources" >
             <a className={styles.card}>
-            <Image src="/learn.svg" alt="LEarning resources" width={100} height={100}  priority/>
+            <Image src="/learn.svg" alt="Learning resources" width={100} height={100}  priority/>
 
             <h3 >Learning resources</h3>
             </a>
