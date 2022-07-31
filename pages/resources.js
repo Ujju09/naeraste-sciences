@@ -4,8 +4,16 @@
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 const Resource = ({ records }) => {
+  const router = useRouter();
+  const { grade } = router.query;
+
+  const gradefilteredRecords = records.filter(
+    (record) => record.fields["Grade"] === parseInt(grade)
+  );
+
   return (
     <div className={styles.container}>
       <Head>
@@ -17,7 +25,7 @@ const Resource = ({ records }) => {
       <main className={styles.main}>
         <h1 className={styles.title}>naeRaste │ ✍️</h1>
         <div className={styles.grid}>
-          {records.map((record, index) => (
+          {gradefilteredRecords.map((record, index) => (
             <Link
               key={index}
               href={{
