@@ -22,11 +22,27 @@ const Home: NextPage = () => {
       </Head>
 
       <main className={styles.main}>
-        <h1 className={styles.title}>
-         nae raste │
-         नए रास्ते
+        <div className={styles.title}>
+          <div style={{
+            display: 'flex',
+            flexDirection: 'row',
+            justifyContent: 'space-between',
+            paddingLeft: '0.5rem',
+            paddingRight: '0.5rem',
+
+            
+          }}>
+            <Image src="/nrsvg.svg" alt="näraste" width={50} height={50} />
+            
+
+
+              nae raste│नए रास्ते
+            
+
+          </div>
         
-        </h1>
+        
+        </div>
 
         <p className={styles.description}>
           science <br/><span>
