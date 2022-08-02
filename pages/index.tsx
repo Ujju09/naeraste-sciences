@@ -13,7 +13,7 @@ const Home: NextPage = () => {
   return (
     <div className={styles.container}>
       <Head>
-        <title>naeRaste</title>
+        <title>nae raste</title>
         <meta name="description" content="Superpowered notebooks" />
         <link rel="icon" href="/favicon.ico" />
         <link rel="manifest" href="/site.webmanifest"/>
