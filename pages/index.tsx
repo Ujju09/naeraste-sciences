@@ -3,7 +3,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import Link from 'next/link'
-import Newsletter from '../components/newsletter'
+import Script from 'next/script'
 import { useState } from 'react'
 
 
@@ -89,9 +89,25 @@ const Home: NextPage = () => {
          
           
         </div>
+       
       </main>
+      <footer className={styles.footer}>
+      <div style={{
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+          flexDirection: 'column'
+        }}>
 
-      <Newsletter />
+        
+        Subscribe to our newsletter to get updates on new resources, blogs and videos.
+        Don&apos;t worry, we won&apos;t spam.
+          
+        <Image src={'/line-3.svg'} alt="Newsletter" width={100} height={100} />
+        </div>
+      </footer>
+
+      <Script async data-uid="37bab4a468" src="https://artisanal-producer-6695.ck.page/37bab4a468/index.js"></Script>
     </div>
   )
 }
