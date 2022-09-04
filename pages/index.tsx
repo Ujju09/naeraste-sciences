@@ -2,10 +2,9 @@ import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
-import Link from 'next/link'
 import Script from 'next/script'
 import { useState } from 'react'
-
+import Link from 'next/link'
 
 const Home: NextPage = () => {
   const grades = [9,10,11,12];
@@ -45,7 +44,9 @@ const Home: NextPage = () => {
         </div>
 
         <p className={styles.description}>
-          science <br/><span>
+          <h2>
+          science <br/>
+            </h2><span>
           <label>select your class </label>  
             <select style={{
               width: '100px',
@@ -71,23 +72,91 @@ const Home: NextPage = () => {
           
             </span></p>
         <div className={styles.grid}>
-        <Link href= {
-            {
-              pathname: '/resources',
-              query: {
-                grade: grade
-              }
-            }
-            
-          } >
-            <a className={styles.card}>
-            <Image src="/learn.svg" alt="Learning resources" width={100} height={100}  priority/>
-
-            <h3 >Learning resources</h3>
-            </a>
+          <div  className={styles.card}>
+          <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+          paddingLeft: "0.5rem",
+        }}
+      >
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "space-between",
+            padding: "0.5rem",
+          }}
+        >
+        </div>
+        <h3>{"Your Questions"}</h3>
+        <p>{"We love your questions. Ask your doubts. We are more than happy to help!"}</p>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "end",
+          }}
+        >
+          <Link
+            href={{
+              pathname: "/getHelp",
+            }}
+          >
+            <button className={styles.button}>I have a Question!</button>
           </Link>
-         
-          
+        </div>
+      </div>
+
+          </div>
+        
+            
+        <a className={styles.card}>
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+          paddingLeft: "0.5rem",
+        }}
+      >
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "space-between",
+            padding: "0.5rem",
+          }}
+        >
+          <Image
+            src='/resources.png'
+            alt="Learning resources"
+            width={100}
+            height={187}
+            priority
+          />
+        </div>
+        <h2>{"Learning Resources"}</h2>
+        <p>{"Start learning by watching curated videos, practice problems, review factual knowledge and more.."}</p>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "end",
+          }}
+        >
+          <Link
+            href={{
+              pathname: "/resources",
+              query: {
+                grade: grade,
+              },
+            }}
+          >
+            <button className={styles.button}>Explore</button>
+          </Link>
+        </div>
+      </div>
+    </a>  
         </div>
        
       </main>
@@ -96,7 +165,8 @@ const Home: NextPage = () => {
           display: 'flex',
           justifyContent: 'center',
           alignItems: 'center',
-          flexDirection: 'column'
+          flexDirection: 'column',
+          padding:"1rem"
         }}>
 
         

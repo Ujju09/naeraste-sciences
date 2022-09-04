@@ -5,6 +5,7 @@ import Head from "next/head";
 import styles from "../styles/Home.module.css";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import Image from "next/image";
 
 const Resource = ({ records }) => {
   const router = useRouter();
@@ -23,8 +24,24 @@ const Resource = ({ records }) => {
         <link rel="manifest" href="/site.webmanifest" />
       </Head>
       <main className={styles.main}>
-        <h1 className={styles.title}>naeRaste │ ✍️</h1>
+        <h1 className={styles.title}>nae raste │ ✍️</h1>
         <div className={styles.grid}>
+          <h2
+            style={{
+              paddingLeft: "1.2rem",
+              paddingRight: "1.2rem",
+              color: "#9D9A9A",
+              textAlign: "center",
+            }}
+          >
+            Don&apos;t take anyone&apos;s word for it.
+          </h2>
+          <Image
+            src={`/brainstorming.png`}
+            alt="book"
+            width={165}
+            height={135}
+          />
           {gradefilteredRecords.map((record, index) => (
             <Link
               key={index}
