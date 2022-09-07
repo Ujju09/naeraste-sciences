@@ -157,6 +157,18 @@ export default function Resource({ records }) {
                 )
               )}
             </orbit-reviewarea>
+            Want to Contribute Questions ?
+            <button className={styles.button}>
+              <a
+                href={`https://wa.me/919755992478?text=${encoded}`}
+                style={{
+                  color: "white",
+                  textDecoration: "none",
+                }}
+              >
+                Share Qs on WhatsApp
+              </a>
+            </button>
           </>
         )}
 
