@@ -12,6 +12,12 @@
   align-items: center;
   font-family: 'Lexend', monospace;
 }
+
+.title .h2{
+  color: rgb(83, 83, 83);
+  font-size: 1.625rem;
+  font-weight: 500;
+}
 .mainDiksha {
   height: 100%;
   padding: 0rem 0;
@@ -21,7 +27,7 @@
   justify-content: flex-start;
   align-items: center;
   font-family: 'Lexend', monospace;
-  background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+  background:white;
 }
 
 .container{
@@ -122,39 +128,10 @@ font-weight: 400;
 .title {
   margin: 0;
   line-height: 2;
-  font-size: 2rem;
-
+  font-size: 1.625rem;
   width: 100vw;
-  
-  color: white;
+  color: #f9f9f9;
   font-weight: 300;
-  background: linear-gradient(124deg, #ff2400, #e81d1d, #e8b71d, #e3e81d, #1de840, #1ddde8, #2b1de8, #dd00f3, #dd00f3);
-background-size: 1800% 1800%;
-
--webkit-animation: rainbow 18s ease infinite;
--z-animation: rainbow 18s ease infinite;
--o-animation: rainbow 18s ease infinite;
-  animation: rainbow 18s ease infinite;}
-
-@-webkit-keyframes rainbow {
-    0%{background-position:0% 82%}
-    50%{background-position:100% 19%}
-    100%{background-position:0% 82%}
-}
-@-moz-keyframes rainbow {
-    0%{background-position:0% 82%}
-    50%{background-position:100% 19%}
-    100%{background-position:0% 82%}
-}
-@-o-keyframes rainbow {
-    0%{background-position:0% 82%}
-    50%{background-position:100% 19%}
-    100%{background-position:0% 82%}
-}
-@keyframes rainbow { 
-    0%{background-position:0% 82%}
-    50%{background-position:100% 19%}
-    100%{background-position:0% 82%}
 }
 
 
@@ -183,7 +160,7 @@ background-size: 1800% 1800%;
 
 .card {
   margin: 1rem;
-  padding: 1.5rem;
+  padding: 0.225rem 1rem  0.625rem;
   display: flex;
   text-align: left;
   color: inherit;
@@ -231,14 +208,14 @@ background-size: 1800% 1800%;
 }
 
 .card h2 {
-  margin: 0 0 1rem 0;
+  margin: 0 0 0.625rem 0;
   font-size: 1.5rem;
 }
 
 .card p {
   margin: 0;
   font-size: 1.25rem;
-  line-height: 1.5;
+  line-height: 1.25;
   font-weight: 300;
 }
 
@@ -348,16 +325,19 @@ background-size: 1800% 1800%;
 
 
 .button{
-  background-color:#D05E70;
-  border-radius: 10px;
-  color: white;
-  padding: 0.75rem 1.25rem;
-  font-size: 1.2rem;
-  
-  font-weight: 500;
-  border: none;
+  color: rgb(255, 255, 255);
+  border-radius: 0.625rem;
+  margin-top: 0.625rem;
+  padding: 0.875rem 1.5rem 1rem;
+  font-size: 1.125rem;
+  font-weight: 700;
+  line-height: 1;
+  border: 0rem;
   cursor: pointer;
-  margin: 1rem;
+  user-select: none;
+  transition: transform 200ms ease 0s, background 200ms ease 0s;
+  text-align: center;
+  background: #2F80FA;
 }
 
 .button:hover,
@@ -370,14 +350,22 @@ background-size: 1800% 1800%;
   margin: 1rem;
   display: flex;
   flex-direction: column;
-  padding: 1.5rem;
+  padding-left: 1.5rem;
   color: inherit;
   background-color: aliceblue;
   text-decoration: none;
   border: 1px solid #eaeaea;
-  border-radius: 40px;
+  border-radius: 20px;
   transition: color 0.15s ease, border-color 0.15s ease;
   max-width: 300px;
+}
+
+.helpcard p{
+  margin: 0;
+}
+
+.helpcard h3{
+  margin: 0;
 }
 
 .helpcard:hover,

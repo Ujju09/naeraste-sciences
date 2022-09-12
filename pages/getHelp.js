@@ -16,11 +16,14 @@ const Help = ({ records }) => {
         <link rel="manifest" href="/site.webmanifest" />
       </Head>
       <main className={styles.main}>
-        <h1 className={styles.title}>nae raste │ 🤝</h1>
+        <h1 className={styles.title}>
+          <h2 className={styles.h2}>nae raste │ 🤝</h2>
+        </h1>
         <h3
           style={{
             padding: "1rem",
             color: "#9D9A9A",
+            textAlign: "center",
           }}
         >
           Just click the photo of the problem you are stuck with and share it
@@ -52,8 +55,8 @@ const Help = ({ records }) => {
               <div
                 style={{
                   display: "flex",
-                  gap: "10px",
-                  marginTop: "10px",
+                  gap: "7px",
+                  marginTop: "1px",
                 }}
               >
                 {record.fields["Subject"].map((subject, index) => (
@@ -90,6 +93,7 @@ export async function getStaticProps() {
 
   return {
     props: { records: records.records }, // will be passed to the page component as props
+    revalidate: 86400,
   };
 }
 

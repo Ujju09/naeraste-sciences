@@ -28,6 +28,7 @@ const Home: NextPage = () => {
             justifyContent: 'space-between',
             paddingLeft: '0.5rem',
             paddingRight: '0.5rem',
+            backgroundColor: '#f9f9f9',
 
             
           }}>
@@ -35,7 +36,9 @@ const Home: NextPage = () => {
             
 
 
-              nae raste│नए रास्ते
+            <h2 className={styles.h2}>
+          science
+            </h2>
             
 
           </div>
@@ -44,9 +47,7 @@ const Home: NextPage = () => {
         </div>
 
         <p className={styles.description}>
-          <h2>
-          science <br/>
-            </h2><span>
+        <span>
           <label>select your class </label>  
             <select style={{
               width: '100px',
@@ -160,24 +161,8 @@ const Home: NextPage = () => {
         </div>
        
       </main>
-      <footer className={styles.footer}>
-      <div style={{
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center',
-          flexDirection: 'column',
-          padding:"1rem"
-        }}>
 
-        
-        Subscribe to our newsletter to get updates on new resources, blogs and videos.
-        Don&apos;t worry, we won&apos;t spam.
-          
-        <Image src={'/line-3.svg'} alt="Newsletter" width={100} height={100} />
-        </div>
-      </footer>
-
-      <Script async data-uid="37bab4a468" src="https://artisanal-producer-6695.ck.page/37bab4a468/index.js"></Script>
+      <Script async data-uid="b3ea752d78" src="https://artisanal-producer-6695.ck.page/b3ea752d78/index.js"></Script>
     </div>
   )
 }
