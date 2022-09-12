@@ -16,7 +16,9 @@ export default function Diksha({ content }) {
         <link rel="manifest" href="/site.webmanifest" />
       </Head>
       <main className={styles.main}>
-        <h1 className={styles.title}>Diksha</h1>
+        <div className={styles.title}>
+          <h2>Diksha</h2>
+        </div>
         <div className={styles.grid}>
           {contentArray.map((content, index) => (
             <Link

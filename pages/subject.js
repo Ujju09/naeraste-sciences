@@ -23,19 +23,20 @@ export default function Resource({ records }) {
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
       </Head>
       <main className={styles.main}>
-        <h1 className={styles.title}>nae raste │ ✍️</h1>
-        <p
-          style={{
-            fontSize: "1.5rem",
-            fontWeight: "bold",
-            marginBottom: "1rem",
-            marginTop: "1rem",
-            textAlign: "center",
-            color: "#D05E70",
-          }}
-        >
-          {records.fields["Chapter Name"]}
-        </p>
+        <div className={styles.title}>
+          <p
+            style={{
+              fontSize: "1.5rem",
+              fontWeight: "bold",
+              marginBottom: "1rem",
+              marginTop: "1rem",
+              textAlign: "center",
+              color: "#D05E70",
+            }}
+          >
+            {records.fields["Chapter Name"]}
+          </p>
+        </div>
 
         {records.fields.hasOwnProperty("practiceOnKhanAcademy") === true ? (
           <div className={styles.practiceCard}>

@@ -24,12 +24,13 @@ const Resource = ({ records }) => {
         <link rel="manifest" href="/site.webmanifest" />
       </Head>
       <main className={styles.main}>
-        <h1 className={styles.title}>nae raste │ ✍️</h1>
         <div className={styles.grid}>
           <h2
             style={{
               paddingLeft: "1.2rem",
               paddingRight: "1.2rem",
+              lineHeight: "2rem",
+              letterSpacing: "-0.01rem",
               color: "#9D9A9A",
               textAlign: "center",
             }}
