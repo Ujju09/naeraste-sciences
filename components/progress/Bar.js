@@ -5,8 +5,8 @@ export const Bar = ({ animationDuration, progress }) => {
     <div
       className="bar"
       style={{
-        transform: `translate3d(${progress - 1}%, 0, 0)`,
-        transition: `transform ${animationDuration}ms linear`,
+        marginLeft: `-${100 - progress * 100}%`,
+        transition: `margin-left ${animationDuration}ms linear`,
         maxWidth: "100%",
         position: "fixed",
         bottom: 0,
