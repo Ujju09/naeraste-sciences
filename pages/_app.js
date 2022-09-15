@@ -29,8 +29,8 @@ export default function App({ Component, pageProps }) {
   }, [router]);
   return (
     <>
-      <Progress isAnimating={isAnimating} />
       <Component {...pageProps} />
+      <Progress isAnimating={isAnimating} />
     </>
   );
 }
