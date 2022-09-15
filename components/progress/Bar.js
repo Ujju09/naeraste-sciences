@@ -5,12 +5,12 @@ export const Bar = ({ animationDuration, progress }) => {
     <div
       className="bar"
       style={{
-        transform: `translateX(${progress * 100}%)`,
+        transform: `translate3d(-${progress}%, 0, 0)`,
         transition: `transform ${animationDuration}ms linear`,
-        backgroundColor: "#2F80FA",
-        width: "100%",
+        maxWidth: "100%",
         height: "8px",
-        zIndex: 50,
+        background: "#0070f3",
+        zIndex: "50",
       }}
     />
   );
