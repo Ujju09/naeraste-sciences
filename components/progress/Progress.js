@@ -1,8 +1,8 @@
 /** @format */
 
 import { useNProgress } from "@tanem/react-nprogress";
-import { Bar } from "./bar";
-import { Container } from "./container";
+import { Bar } from "./Bar";
+import { Container } from "./Container";
 
 export const Progress = ({ isAnimating }) => {
   const { animationDuration, isFinished, progress } = useNProgress({
