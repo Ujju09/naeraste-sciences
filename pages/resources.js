@@ -6,6 +6,7 @@ import styles from "../styles/Home.module.css";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import Image from "next/image";
+import { Title } from "../components/Title";
 
 const Resource = ({ records }) => {
   const router = useRouter();
@@ -24,7 +25,7 @@ const Resource = ({ records }) => {
         <link rel="manifest" href="/site.webmanifest" />
       </Head>
       <main className={styles.main}>
-        <div className={styles.grid}>
+        <Title>
           <h2
             style={{
               paddingLeft: "1.2rem",
@@ -37,6 +38,8 @@ const Resource = ({ records }) => {
           >
             Don&apos;t take anyone&apos;s word for it.
           </h2>
+        </Title>
+        <div className={styles.grid}>
           <Image
             src={`/brainstorming.png`}
             alt="book"
