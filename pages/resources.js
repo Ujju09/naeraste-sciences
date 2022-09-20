@@ -7,6 +7,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import Image from "next/image";
 import { Title } from "../components/Title";
+import Script from "next/script";
 
 const Resource = ({ records }) => {
   const router = useRouter();
@@ -24,6 +25,14 @@ const Resource = ({ records }) => {
         <link rel="icon" href="/favicon.ico" />
         <link rel="manifest" href="/site.webmanifest" />
       </Head>
+      <Script async src="https://www.googletagmanager.com/gtag/js?id=G-DGC187B0GF" id='1'></Script>
+<Script id='2'>
+  {`window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-DGC187B0GF')`};
+</Script>
       <main className={styles.main}>
         <Title>
           <h2

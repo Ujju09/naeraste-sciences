@@ -20,6 +20,14 @@ export default function Diksha(data) {
         async
         src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
       ></Script>
+      <Script async src="https://www.googletagmanager.com/gtag/js?id=G-DGC187B0GF" id='1'></Script>
+<Script id='2'>
+  {`window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-DGC187B0GF')`};
+</Script>
       <h2>nae raste│practice</h2>
 
       <div className={styles.questionCard}>

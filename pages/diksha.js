@@ -3,7 +3,7 @@
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
 import Link from "next/link";
-
+import Script from "next/script";
 export default function Diksha({ content }) {
   const contentArray = content.split(";");
 
@@ -15,6 +15,14 @@ export default function Diksha({ content }) {
         <link rel="icon" href="/favicon.ico" />
         <link rel="manifest" href="/site.webmanifest" />
       </Head>
+      <Script async src="https://www.googletagmanager.com/gtag/js?id=G-DGC187B0GF" id='1'></Script>
+<Script id='2'>
+  {`window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-DGC187B0GF')`};
+</Script>
       <main className={styles.main}>
         <div className={styles.title}>
           <h2>Diksha</h2>

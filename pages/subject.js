@@ -22,6 +22,14 @@ export default function Resource({ records }) {
         <link rel="manifest" href="/site.webmanifest" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
       </Head>
+      <Script async src="https://www.googletagmanager.com/gtag/js?id=G-DGC187B0GF" id='1'></Script>
+<Script id='2'>
+  {`window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-DGC187B0GF')`};
+</Script>
       <main className={styles.main}>
         <div className={styles.title}>
           <p

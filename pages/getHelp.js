@@ -2,6 +2,7 @@
 
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
+import Script from "next/script";
 
 const Help = ({ records }) => {
   const helpText = "Can you help me out?";
@@ -15,6 +16,14 @@ const Help = ({ records }) => {
         <link rel="icon" href="/favicon.ico" />
         <link rel="manifest" href="/site.webmanifest" />
       </Head>
+      <Script async src="https://www.googletagmanager.com/gtag/js?id=G-DGC187B0GF" id='1'></Script>
+<Script id='2'>
+  {`window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-DGC187B0GF')`};
+</Script>
       <main className={styles.main}>
         <h1 className={styles.title}>
           <h2 className={styles.h2}>nae raste │ 🤝</h2>
