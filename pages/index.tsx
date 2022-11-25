@@ -169,8 +169,6 @@ const Home: NextPage = () => {
         </div>
        
       </main>
-
-      <Script async data-uid="b3ea752d78" src="https://artisanal-producer-6695.ck.page/b3ea752d78/index.js"></Script>
     </div>
   )
 }
