@@ -189,7 +189,7 @@ const Home: NextPage = () => {
             justifyContent: "end",
           }}
         >
-          <a href='https://www.playbook.com/s/ujjwal/eQJzXZ8sq6XF94FSt7NjYFE8/KH1W4QbcSyTN8zoj1ZRWdk5B'
+          <a href='https://www.playbook.com/s/ujjwal/eQJzXZ8sq6XF94FSt7NjYFE8'
           >
             <button className={styles.button}>Open →</button>
           </a>
@@ -203,6 +203,45 @@ const Home: NextPage = () => {
             </>
           )
         }
+        <div>
+        
+        {
+          grade ==12 ? (
+            <div className={styles.card}>
+              <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+          paddingLeft: "0.5rem",
+        }}
+      >
+ <h3>Sample Papers</h3>
+            <p>
+              Get prepared by solving Previous Year Question Papers.
+            </p>
+            <div
+          style={{
+            display: "flex",
+            justifyContent: "end",
+          }}
+        >
+          <a href='https://www.playbook.com/ujjwal/1vMXzQyf6aphmCf6WJSG9q8F'
+          >
+            <button className={styles.button}>Open →</button>
+          </a>
+        </div>
+      </div>
+           
+  
+          </div>
+          ):(
+            <>
+            </>
+          )
+        }
+        </div>
+        
        
        
       </main>
