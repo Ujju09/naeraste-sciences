@@ -226,7 +226,7 @@ const Home: NextPage = () => {
             justifyContent: "end",
           }}
         >
-          <a href='https://www.playbook.com/ujjwal/1vMXzQyf6aphmCf6WJSG9q8F'
+          <a href='https://www.playbook.com/s/ujjwal/W13cm7pKdSAui2FwEFepmLzy'
           >
             <button className={styles.button}>Open →</button>
           </a>
