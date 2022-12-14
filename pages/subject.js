@@ -1,14 +1,22 @@
 /** @format */
 
 import styles from "../styles/Home.module.css";
-import Image from "next/image";
 import Head from "next/head";
 import Script from "next/script";
-import Link from "next/link";
+import OrbitList from "../components/orbit_page";
+import VideoList from "../components/video_list";
+import QuestionSets from "../components/question_sets";
+import NotesList from "../components/notes_list";
+import { useState } from "react";
+import Image from "next/image";
 
 export default function Resource({ records }) {
-  const helpText = `I want to share ${records.fields["Chapter Name"]} questions with you.`;
-  const encoded = encodeURI(helpText);
+
+  const [active, setActive] = useState(1);
+  const handleClick = (e, n) => {
+    e.preventDefault();
+    setActive(n);
+  }
 
   return (
     <div className={styles.container}>
@@ -31,6 +39,23 @@ export default function Resource({ records }) {
   gtag('config', 'G-DGC187B0GF')`};
 </Script>
       <main className={styles.main}>
+      <div className={styles.title}>
+          <div style={{
+            display: 'flex',
+            flexDirection: 'row',
+            justifyContent: 'flex-end',
+            paddingLeft: '0.5rem',
+            paddingRight: '0.5rem',
+
+            
+          }}>
+            <Image src="/bookmark-orange.png" alt="bookmark-shape representing the exposure part." width={39.68} height={50} />
+            
+
+          </div>
+        
+        
+        </div>
         <div className={styles.title}>
           <p
             style={{
@@ -45,233 +70,45 @@ export default function Resource({ records }) {
             {records.fields["Chapter Name"]}
           </p>
         </div>
-
-        {records.fields.hasOwnProperty("practiceOnKhanAcademy") === true ? (
-          <div className={styles.practiceCard}>
-            <div
-              style={{
-                display: "flex",
-                flexDirection: "column",
-              }}
-            >
-              <div
-                style={{
-                  display: "flex",
-                  flexDirection: "row",
-                }}
-              >
-                <Image
-                  src="/KhanSVG.svg"
-                  width={50}
-                  height={50}
-                  alt="Khan Academy Logo"
-                />
-                <h3> Practice on Khan Academy</h3>
-              </div>
-              <p
-                style={{
-                  paddingLeft: "0.5rem",
-                  fontWeight: "300",
-                }}
-              >
-                Khan Academy contains a lot of practice questions for you to do
-                in {records.fields["Chapter Name"]}. They also have explanation
-                videos.
-              </p>
-              <Link href={records.fields["practiceOnKhanAcademy"]}>
-                <button className={styles.button}>Practice Now</button>
-              </Link>
-            </div>
+        <div className={styles.topicList}>
+          <div  className={
+            active === 1 ? styles.topicActive : styles.topic
+          } onClick={(e)=> handleClick(e,1)}>
+            Videos
           </div>
-        ) : (
-          <></>
-        )}
-        {records.fields.hasOwnProperty("Question (from Notes)") === false ? (
-          <div className={styles.practiceCard}>
-            <div
-              style={{
-                display: "flex",
-                flexDirection: "column",
-              }}
-            >
-              <div
-                style={{
-                  display: "flex",
-                  flexDirection: "row",
-                }}
-              >
-                <Image
-                  src="/orbit.svg"
-                  width={50}
-                  height={50}
-                  alt="Orbit Logo"
-                />
-                <h3> Chance to win exciting rewards </h3>
-              </div>
-              <p
-                style={{
-                  paddingLeft: "0.5rem",
-                  fontWeight: "300",
-                }}
-              >
-                Orbit helps you remember important facts and formulas.
-                Currently,{records.fields["Chapter Name"]} contains no
-                questions. Contribute questions and answers and win exciting
-                gifts. 🎁
-              </p>
-              <button className={styles.button}>
-                <a
-                  href={`https://wa.me/919755992478?text=${encoded}`}
-                  style={{
-                    color: "white",
-                    textDecoration: "none",
-                  }}
-                >
-                  Share Qs on WhatsApp
-                </a>
-              </button>
+          <div className={
+            active === 2 ? styles.topicActive : styles.topic
+          } onClick={(e)=> handleClick(e,2)} >
+            Orbit
             </div>
-          </div>
-        ) : (
-          <>
-            <div
-              style={{
-                display: "flex",
-                marginBottom: "1rem",
-              }}
-            >
-              <Image
-                src="/orbit.svg"
-                alt="Orbit image"
-                width={100}
-                height={100}
-              />
-              <h3>
-                Deeply internalize ideas and facts through periodic review.
-              </h3>
+          <div className={
+            active === 3 ? styles.topicActive : styles.topic
+          } onClick={(e)=> handleClick(e,3)}>
+            Question Sets
             </div>
-            <orbit-reviewarea
-              color="orange"
-              style={{
-                width: "100%",
-              }}
-            >
-              {records.fields["Question (from Notes)"].map(
-                (question, index) => (
-                  <orbit-prompt
-                    question={question}
-                    answer={records.fields["Answer (from Notes)"][index]}
-                    key={index}
-                  ></orbit-prompt>
-                )
-              )}
-            </orbit-reviewarea>
-            Want to Contribute Questions ?
-            <button className={styles.button}>
-              <a
-                href={`https://wa.me/919755992478?text=${encoded}`}
-                style={{
-                  color: "white",
-                  textDecoration: "none",
-                }}
-              >
-                Share Qs on WhatsApp
-              </a>
-            </button>
-          </>
-        )}
-
-        {records.fields.hasOwnProperty("prepareOnDiksha") === true ? (
-          <div className={styles.practiceCard}>
-            <div
-              style={{
-                display: "flex",
-                flexDirection: "column",
-              }}
-            >
-              <div
-                style={{
-                  display: "flex",
-                  flexDirection: "row",
-                }}
-              >
-                <Image
-                  src="/diksha.svg"
-                  width={50}
-                  height={50}
-                  alt="Diksha Logo"
-                />
-                <h3
-                  style={{
-                    paddingLeft: "0.5rem",
-                  }}
-                >
-                  {" "}
-                  Practice on Diksha
-                </h3>
-              </div>
-              <p
-                style={{
-                  paddingLeft: "0.5rem",
-                  fontWeight: "300",
-                }}
-              >
-                Diksha is a go to source for all things NCERT, it contains a lot
-                of practice questions for you to do in{" "}
-                {records.fields["Chapter Name"]}. They also have explanation
-                videos, MCQs, Short Answer, Long Answer questions to help you
-                with exam prep.
-              </p>
-              <Link
-                href={{
-                  pathname: "/diksha",
-                  query: {
-                    content: records.fields["prepareOnDiksha"],
-                  },
-                }}
-              >
-                <button className={styles.button}>Practice Now</button>
-              </Link>
+            <div className={
+            active === 4 ? styles.topicActive : styles.topic
+          } onClick={(e)=> handleClick(e,4)}>
+              Notes
             </div>
-          </div>
-        ) : (
-          <></>
-        )}
+        </div>
+       {
+        active === 1 ? <VideoList records={records} /> : <></>
+       }
         {
-          <div className={styles.practiceCard}>
-            <div
-              style={{
-                display: "flex",
-                flexDirection: "column",
-              }}
-            >
-              <h3
-                style={{
-                  textDecoration: "none",
-                  color: "green",
-                  cursor: "pointer",
-                  paddingLeft: "0.5rem",
-                }}
-              >
-                NCERT Exemplar PDF {""}
-              </h3>
-              <p
-                style={{
-                  paddingLeft: "0.5rem",
-                  fontWeight: "300",
-                }}
-              >
-                NCERT Exemplar contains very good question sets. They help you
-                prepare better for exams, boost confidence and more.
-              </p>
-              <Link href={records.fields["ncertExemplar"]}>
-                <button className={styles.button}>
-                  Download Now. It&apos;s free!
-                </button>
-              </Link>
-            </div>
-          </div>
-        }
+        active === 2 ? <OrbitList records={records} />: <></>
+       }
+       {
+        active === 3 ? <QuestionSets records = {records}/> : <></>
+       }
+       {
+        active === 4 ? <NotesList records={records}/> : <></>
+       }
+        
+
+
+        
+        
       </main>
     </div>
   );

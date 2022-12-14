@@ -174,7 +174,9 @@ font-weight: 400;
 }
 .practiceCard{
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2.25rem;
   border: 1px solid #30aa96;
   border-radius: 10px;
   padding: 0.35rem;
@@ -271,7 +273,11 @@ font-weight: 400;
   }
   .practiceCard{
     width: 90%;
-    justify-content: space-around;
+    justify-content: center;
+    align-items: center;
+    padding: auto;
+    margin: auto;
+    margin-top: 2.25rem;
   }
   .helpcard{
     width:100%;
@@ -386,3 +392,43 @@ font-weight: 400;
   padding: 1rem;
   font-size: 1.2rem;
 }
+
+.topicList{
+  padding-top: 1rem;
+  display: flex;
+  gap: 0.5rem;
+  flex-direction: row;
+  justify-content: left;
+  overflow-x: auto;
+  flex-wrap: nowrap;
+}
+
+.topic{
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  border-radius: 0.2rem;
+  background-color: rgb(217, 217, 217, 0.47);
+  color: #8B8080;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  font-family: 'Lexend', monospace;
+  box-sizing: border-box;
+}
+
+.topicActive{
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  border-radius: 0.2rem;
+  background-color: rgb(217, 217, 217, 0.47);
+  color: #8B8080;
+  border: solid 2px #f2b61e;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  font-family: 'Lexend', monospace;
+  box-sizing: border-box;
+}
+
