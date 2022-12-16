@@ -11,7 +11,9 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  font-family: 'Lexend', monospace;
+  font-family: 'Lexend', sans-serif, Arial, Helvetica, sans-serif;
+  -webkit-overflow-scrolling: touch;
+  overflow-y: auto;
 }
 
 .title h2{
@@ -72,8 +74,26 @@ font-weight: 400;
   border-color: #0070f3;
   font-family: 'Lexend', monospace;
 }
+.videoGrid{
+  padding-left: 1.2rem;
+  padding-right: 1.2rem;
+  display: grid;
+ grid-template-columns: repeat(3, 1fr);
+ gap: 10px;
+ grid-auto-rows: minmax(100px, auto);
 
+}
 
+.iframe{
+  /* width: 40rem;
+  height: 22.5rem;   */
+  aspect-ratio: 16/9;
+  overflow: hidden;
+  clip-path: inset(0% 0% 0% 0% round 0px);
+  margin-top: 0.8rem;
+  margin-bottom: 0.8rem;
+
+}
 
 .questionCard{
   width: 65%;
@@ -131,7 +151,7 @@ font-weight: 400;
   line-height: 2;
   font-size: 1.625rem;
   width: 100vw;
-  color: #f9f9f9;
+  color: #333232;
   font-weight: 300;
 }
 
@@ -174,9 +194,7 @@ font-weight: 400;
 }
 .practiceCard{
   display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 2.25rem;
+  justify-content: space-around;
   border: 1px solid #30aa96;
   border-radius: 10px;
   padding: 0.35rem;
@@ -191,16 +209,6 @@ font-weight: 400;
   cursor: pointer;
 }
 
-.iframe{
-  width: 100%;
-  height: 500px;
-
-  border-radius: 10px;
-  
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-
-}
 
 .card:hover,
 .card:focus,
@@ -235,6 +243,9 @@ font-weight: 400;
   .iframe{
     width: 100%;
     height: 200px;
+    border-radius: 0px;
+    overflow: hidden;
+
   }
   .gridcal{
     width: 100%;
@@ -273,16 +284,52 @@ font-weight: 400;
   }
   .practiceCard{
     width: 90%;
-    justify-content: center;
-    align-items: center;
-    padding: auto;
-    margin: auto;
-    margin-top: 2.25rem;
+    justify-content: space-around;
   }
   .helpcard{
     width:100%;
     padding: 1.2rem;
   }
+  .videoGrid{
+    display: flex;
+    flex-direction: column;
+    
+   
+
+  }
+  .videoCard{
+    display: flex;
+  flex-direction: column;
+  border: #B8BCC1 solid 1px;
+  border-radius: 0.5rem;
+  margin: 0.4rem;
+  width: 90%;
+  padding: 0.5rem;
+  text-align: left;
+  }
+}
+
+.videoCard {
+  display: flex;
+  flex-direction: column;
+  border: #B8BCC1 solid 1px;
+  border-radius: 0.5rem;
+  margin: 0.4rem;
+  width: 90%;
+  padding: 1rem;
+  text-align: left;
+}
+
+.videoCard h3{
+  font-weight: 300;
+  margin-top: 0em;
+
+}
+
+.videoCard caption{
+  text-align: left;
+  font-weight: 200;
+  color: #8B8080;
 }
 
 .submitButton{
@@ -392,6 +439,61 @@ font-weight: 400;
   padding: 1rem;
   font-size: 1.2rem;
 }
+
+
+.article{
+  --gutterWidth: 1.5rem;
+  --containerWidth: 68.75rem;
+  max-width: var(--containerWidth);
+  padding: 0 var(--gutterWidth);
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 0.8rem;
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  text-rendering: optimizeLegibility;
+  font-family: 'Roboto', sans-serif;
+
+}
+
+.article h1{
+   font-weight: 500;
+    letter-spacing: 0.01em;
+    margin-top: 0.25rem;
+    margin-bottom: 0.5rem;
+    font-size: 1.75rem;
+    line-height: 1.2;
+
+}
+
+.article p{
+  font-size: 1.125rem;
+  line-height: 1.5;
+  font-weight: 300;
+  margin-bottom: 1.25rem;
+  margin-top: 0;
+  font-family: 'Roboto', sans-serif;
+}
+
+.article .date{
+  font-size: 0.875rem;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  font-feature-settings: "salt", "ss01", "ss02", "ss03";
+  margin-top: 1rem;
+  margin-bottom: 0.25rem;
+  font-weight: 200;
+}
+
+.article .image{
+  border-radius: 4px;
+}
+
+.article .content{
+  font-weight: 300;
+}
+
 
 .topicList{
   padding-top: 1rem;
