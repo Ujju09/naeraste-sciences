@@ -3,6 +3,7 @@
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
 import Script from "next/script";
+import Sims from "../components/sims";
 
 const Help = ({ records }) => {
   const helpText = "Can you help me out?";
@@ -83,6 +84,7 @@ const Help = ({ records }) => {
             </a>
           ))}
         </div>
+        <Sims />
       </main>
     </div>
   );

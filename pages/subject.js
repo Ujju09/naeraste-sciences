@@ -7,6 +7,7 @@ import OrbitList from "../components/orbit_page";
 import VideoList from "../components/video_list";
 import QuestionSets from "../components/question_sets";
 import NotesList from "../components/notes_list";
+import Sims from "../components/sims";
 import { useState } from "react";
 import Image from "next/image";
 
@@ -91,6 +92,11 @@ export default function Resource({ records }) {
           } onClick={(e)=> handleClick(e,4)}>
               Notes
             </div>
+            <div className={
+            active === 5 ? styles.topicActive : styles.topic
+          } onClick={(e)=> handleClick(e,5)}>
+              Simulations
+            </div>
         </div>
        {
         active === 1 ? <VideoList records={records} /> : <></>
@@ -104,11 +110,9 @@ export default function Resource({ records }) {
        {
         active === 4 ? <NotesList records={records}/> : <></>
        }
-        
-
-
-        
-        
+       {
+        active === 5 ? <Sims records={records}/> : <></>
+       }   
       </main>
     </div>
   );
