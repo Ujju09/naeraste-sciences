@@ -79,7 +79,7 @@ font-weight: 400;
   padding-right: 1.2rem;
   display: grid;
  grid-template-columns: repeat(3, 1fr);
- gap: 10px;
+ gap: 2rem;
  grid-auto-rows: minmax(100px, auto);
 
 }
