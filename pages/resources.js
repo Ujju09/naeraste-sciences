@@ -8,6 +8,7 @@ import { useRouter } from "next/router";
 import Image from "next/image";
 import { Title } from "../components/Title";
 import Script from "next/script";
+import BuyNotebooks from "../components/buy_notebooks";
 
 const Resource = ({ records }) => {
   const router = useRouter();
@@ -69,6 +70,7 @@ const Resource = ({ records }) => {
             </Link>
           ))}
         </div>
+        <BuyNotebooks/>
       </main>
     </div>
   );

@@ -10,7 +10,7 @@ import NotesList from "../components/notes_list";
 import Sims from "../components/sims";
 import { useState } from "react";
 import Image from "next/image";
-
+import BuyNotebooks from "../components/buy_notebooks";
 export default function Resource({ records }) {
 
   const [active, setActive] = useState(1);
@@ -112,7 +112,11 @@ export default function Resource({ records }) {
        }
        {
         active === 5 ? <Sims records={records}/> : <></>
-       }   
+       }  
+       {
+
+       <BuyNotebooks/>
+       } 
       </main>
     </div>
   );

@@ -5,7 +5,7 @@ import styles from '../styles/Home.module.css'
 import Script from 'next/script'
 import { useState } from 'react'
 import Link from 'next/link'
-
+import BuyNotebooks from '../components/buy_notebooks'
 const Home: NextPage = () => {
   const grades = [9,10,11,12];
   const [grade, setGrade] = useState(9);
@@ -45,7 +45,10 @@ const Home: NextPage = () => {
 
 
             <h2 className={styles.h2}>
-          science
+          science<sup style={{
+            fontSize: '1.5rem',
+            color: '#FF9933',
+          }}>{grade}</sup>
             </h2>
             
 
@@ -90,15 +93,6 @@ const Home: NextPage = () => {
           paddingLeft: "0.5rem",
         }}
       >
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "space-between",
-            padding: "0.5rem",
-          }}
-        >
-        </div>
         <h3>{"Your Questions"}</h3>
         <p>{"We love your questions. Ask your doubts. We are more than happy to help!"}</p>
         <div
@@ -137,15 +131,9 @@ const Home: NextPage = () => {
             padding: "0.5rem",
           }}
         >
-          <Image
-            src='/resources.png'
-            alt="Learning resources"
-            width={100}
-            height={187}
-            priority
-          />
+
         </div>
-        <h2>{"Learning Resources"}</h2>
+        <h3>{"Learning Resources"}</h3>
         <p>{"Start learning by watching curated videos, practice problems, review factual knowledge and more.."}</p>
         <div
           style={{
@@ -242,8 +230,7 @@ const Home: NextPage = () => {
         }
         </div>
         
-       
-       
+       <BuyNotebooks />
       </main>
     </div>
   )
